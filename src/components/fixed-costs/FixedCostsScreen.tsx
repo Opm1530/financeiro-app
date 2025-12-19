@@ -14,7 +14,7 @@ export function FixedCostsScreen() {
     const fixedTransactions = transactions.filter(t => t.type === 'EXPENSE' && t.isFixed);
 
     // Calcular média mensal de gastos fixos (Simulação simples)
-    const totalFixed = fixedTransactions.reduce((acc, t) => acc + t.amount, 0);
+    //const totalFixed = fixedTransactions.reduce((acc, t) => acc + t.amount, 0);
 
     const revenueImpact = financials.totalIncome > 0
         ? (financials.fixedExpenses / financials.totalIncome) * 100
