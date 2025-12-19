@@ -1,8 +1,7 @@
-import React from 'react';
 import { Card } from '../ui/BaseComponents';
 import { useFinance } from '../../context/FinanceContext';
 import { formatCurrency, formatDate } from '../../utils/format';
-import { Target, AlertCircle, Rocket } from 'lucide-react';
+import { Target, Rocket } from 'lucide-react';
 import { FinanceCalculator } from '../../utils/financeCalculations';
 
 export function PriorityGoalWidget() {

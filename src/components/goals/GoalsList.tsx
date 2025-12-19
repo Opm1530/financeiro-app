@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import { useFinance } from '../../context/FinanceContext';
 import { Card, Button } from '../ui/BaseComponents';
 import { formatCurrency, formatDate } from '../../utils/format';
-import { Target, Plus, Rocket, Trash2 } from 'lucide-react';
+import { Plus, Rocket, Trash2 } from 'lucide-react';
 import { GoalForm } from './GoalForm';
 import { FinanceCalculator } from '../../utils/financeCalculations';
+import { useState } from 'react';
 
 export function GoalsList() {
     const { goals, transactions, deleteGoal } = useFinance();

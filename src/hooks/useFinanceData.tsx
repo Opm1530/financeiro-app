@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Transaction, Category, Goal } from '../types';
 import { db } from '../services/firebase';
-import { collection, onSnapshot, addDoc, query, orderBy, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { collection, onSnapshot, addDoc, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
 import { FinanceCalculator } from '../utils/financeCalculations';
 
 // Fallback to local storage if Firebase fails or keys missing (Safe Mode)

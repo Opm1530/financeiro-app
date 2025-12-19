@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card } from '../ui/BaseComponents';
 import { useFinance } from '../../context/FinanceContext';
 import { formatCurrency, getMonthName } from '../../utils/format';

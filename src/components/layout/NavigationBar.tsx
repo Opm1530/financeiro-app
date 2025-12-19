@@ -1,4 +1,3 @@
-import React from 'react';
 import { LayoutDashboard, Wallet, TrendingUp, PlusCircle, Shield } from 'lucide-react';
 
 interface NavigationBarProps {

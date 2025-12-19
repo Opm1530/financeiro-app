@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import { Card, Button } from '../ui/BaseComponents';
 import { auth } from '../../services/firebase';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { Lock } from 'lucide-react';
+import { useState } from 'react';
 
 // TODO: ADICIONE AQUI OS EMAILS PERMITIDOS
 const ALLOWED_EMAILS = [

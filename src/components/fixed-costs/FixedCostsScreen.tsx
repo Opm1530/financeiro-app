@@ -1,8 +1,7 @@
-import React from 'react';
 import { useFinance } from '../../context/FinanceContext';
 import { Card } from '../ui/BaseComponents';
 import { formatCurrency } from '../../utils/format';
-import { ShieldAlert, TrendingDown } from 'lucide-react';
+import { ShieldAlert } from 'lucide-react';
 
 export function FixedCostsScreen() {
     const { transactions, financials } = useFinance();

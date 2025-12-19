@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Card, Button, Input } from '../ui/BaseComponents';
+import { Button, Input } from '../ui/BaseComponents';
 import { useFinance } from '../../context/FinanceContext';
 import { X, Check } from 'lucide-react';
 import { Goal } from '../../types';
+import { useState } from 'react';
 
 interface GoalFormProps {
     onClose: () => void;
