@@ -1,0 +1,69 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client"
+  output   = "../node_modules/@prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Service {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  price       Float
+  type        String   @default("STANDARD") // STANDARD, SOCIAL_MEDIA, TRAFFIC
+  clients     Client[] @relation("ClientServices")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Client {
+  id            String   @id @default(uuid())
+  name          String
+  // Contract Data
+  contractUrl   String?
+  startDate     DateTime?
+  endDate       DateTime?
+  contractValue Float?
+  
+  services      Service[] @relation("ClientServices")
+  
+  socialContents SocialMediaContent[]
+  diaryEntries   DiaryEntry[]
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model SocialMediaContent {
+  id           String   @id @default(uuid())
+  title        String
+  subtitle     String?
+  caption      String?
+  idea         String?  // The rough draft/idea
+  
+  scheduledDate DateTime?
+  status       String   @default("DRAFT") // DRAFT, PRODUCTION, APPROVAL, READY, POSTED
+  trelloCardId String?
+  
+  clientId     String
+  client       Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model DiaryEntry {
+  id        String   @id @default(uuid())
+  content   String
+  type      String   // TRAFFIC, SITE, OTHER
+  
+  clientId  String
+  client    Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
