@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-primary);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+    background: var(--color-bg-card);
+    backdrop-filter: var(--glass-effect);
+    -webkit-backdrop-filter: var(--glass-effect);
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+}
+
+.container {
+    max-width: 600px;
+    /* Mobile focused max-width */
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    padding-bottom: 5rem;
+    /* Space for bottom nav */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-card-hover);
+    border-radius: var(--radius-full);
+}
